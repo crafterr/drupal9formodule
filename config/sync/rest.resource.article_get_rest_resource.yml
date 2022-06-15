@@ -1,0 +1,19 @@
+uuid: 3b7a314f-3c2a-40e1-b7db-b0fb0de3e35f
+langcode: en
+status: true
+dependencies:
+  module:
+    - article_creation
+    - serialization
+    - user
+id: article_get_rest_resource
+plugin_id: article_get_rest_resource
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+    - xml
+  authentication:
+    - cookie

@@ -1,0 +1,25 @@
+uuid: 0e8916da-8f53-46c4-a560-6560cf978ced
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.article_crop
+  module:
+    - crop
+name: crop_image_style
+label: 'Crop image style'
+effects:
+  0631bb88-69cc-4f2d-bd55-81e20e6973a4:
+    uuid: 0631bb88-69cc-4f2d-bd55-81e20e6973a4
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: article_crop
+      automatic_crop_provider: null
+  8f3a8b12-8a1f-442b-a67b-36404882b4fe:
+    uuid: 8f3a8b12-8a1f-442b-a67b-36404882b4fe
+    id: image_resize
+    weight: 2
+    data:
+      width: 300
+      height: 300
