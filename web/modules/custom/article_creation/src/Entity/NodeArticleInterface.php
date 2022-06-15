@@ -21,7 +21,7 @@ interface NodeArticleInterface {
    * @return string
    *   Return Description form node.
    */
-  public function getDescription(): string;
+  public function getDescription(): ?string;
 
   /**
    * Get Image.
@@ -29,6 +29,6 @@ interface NodeArticleInterface {
    * @return string
    *   Return image url from node.
    */
-  public function getImage(): string;
+  public function getImage(): ?string;
 
 }

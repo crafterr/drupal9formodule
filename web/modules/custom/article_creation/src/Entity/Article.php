@@ -19,17 +19,20 @@ class Article extends Node implements NodeArticleInterface {
   /**
    * {@inheritDoc}
    */
-  public function getDescription(): string {
-    return $this->get('body')->value;
+  public function getDescription(): ?string {
+    return !$this->get('body')->isEmpty() ? $this->get('body')->value: '';
   }
 
   /**
    * {@inheritDoc}
    */
-  public function getImage(): string {
-    $image_uri = $this->get('field_image')->entity->getFileUri();
-    $image_url = \Drupal::service('file_url_generator')->generateAbsoluteString($image_uri);
-    return $image_url;
+  public function getImage(): ?string {
+    if (!$this->get('field_image')->isEmpty()) {
+      $image_uri = $this->get('field_image')->entity->getFileUri();
+      return \Drupal::service('file_url_generator')->generateAbsoluteString($image_uri);
+    }
+    return '';
+
   }
 
 }
