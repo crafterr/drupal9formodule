@@ -1,0 +1,6 @@
+name: Article Creation
+type: module
+description: Article creation module for test purpose.
+package: Custom
+core: 8.x
+core_version_requirement: ^8 || ^9

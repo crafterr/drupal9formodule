@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Article Creation module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+
+use Drupal\article_creation\Entity\Article;
+use Drupal\article_creation\Entity\NodeArticlenterface;
+
+/**
+ * Implements hook_entity_bundle_info_alter().
+ */
+function article_creation_entity_bundle_info_alter(array &$bundles): void {
+  if (isset($bundles['node']['article'])) {
+    $bundles['node']['article']['class'] = Article::class;
+  }
+}
